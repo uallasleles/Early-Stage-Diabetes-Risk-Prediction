@@ -2,6 +2,10 @@
     "path" : "~/GitHub/proj_20210619-Early_Stage_Diabetes_Risk_Prediction",
     "sortOrder" : [
         {
+            "ascending" : false,
+            "columnIndex" : 1
+        },
+        {
             "ascending" : true,
             "columnIndex" : 2
         }

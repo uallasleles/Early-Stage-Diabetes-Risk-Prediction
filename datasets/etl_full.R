@@ -607,5 +607,5 @@ structure(list(Age = c(40L, 58L, 41L, 45L, 60L, 55L, 57L, 66L,
     1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 
     2L, 2L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 
     1L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 
-    2L, 2L, 2L, 2L, 1L, 1L), .Label = c("Sim", "Não"), class = "factor")), row.names = c(NA, 
--520L), class = "data.frame")
+    2L, 2L, 2L, 2L, 1L, 1L), .Label = c("Positivo", "Negativo"
+    ), class = "factor")), row.names = c(NA, -520L), class = "data.frame")

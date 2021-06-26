@@ -1,4 +1,0 @@
-"0","# TREINO: Pré-visualização das primeiras observações:"
-"0","etl.full %>% "
-"0","    head() %>% "
-"0","    tibble(format = ""markdown"", caption = ""Primeiras observações"")"

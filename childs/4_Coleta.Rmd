@@ -20,7 +20,6 @@ ___
 etl.full %>% 
     head() %>% 
     tibble(format = "markdown", caption = "Primeiras observações")
-print(etl.full)
 ```
 
 ___

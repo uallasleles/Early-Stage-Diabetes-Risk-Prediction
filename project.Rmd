@@ -8,6 +8,8 @@ output:
     variant: markdown_github
   html_document: 
     toc: yes
+    number_sections: yes
+    fig_caption: yes
   html_notebook: 
     fig_caption: yes
     highlight: espresso
@@ -96,10 +98,7 @@ ___
 
 ```{r Pré-visualizando Treino}
 # TREINO: Pré-visualização das primeiras observações:
-etl.full %>% 
-    head() %>% 
-    tibble(format = "markdown", caption = "Primeiras observações")
-print(etl.full)
+kable(etl.full[1:10,], format = "markdown", align = 'l')
 ```
 
 ___

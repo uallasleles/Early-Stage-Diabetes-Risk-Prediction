@@ -4,6 +4,12 @@ subtitle: "Aprendizado de Máquina"
 author: "Uallas Leles"
 date: "Início: Junho de 2021 | Atualização: `r format(Sys.Date(), '%d/%B/%Y')`"
 output:
+  md_document:
+    variant: markdown_github
+  html_document: 
+    toc: yes
+    number_sections: yes
+    fig_caption: yes
   html_notebook: 
     fig_caption: yes
     highlight: espresso
@@ -11,6 +17,8 @@ output:
     theme: paper
     toc: yes
 encoding: "UTF-8"
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -21,7 +29,7 @@ knitr::opts_chunk$set(  echo=TRUE )
 options(OutDec = ",")
 ```
 
-```{r Configura_WD, include=FALSE}
+```{r Configura_WD, eval=FALSE, include=FALSE}
 source(file = "scripts/set_wd.R")
 ```
 
@@ -90,10 +98,7 @@ ___
 
 ```{r Pré-visualizando Treino}
 # TREINO: Pré-visualização das primeiras observações:
-etl.full %>% 
-    head() %>% 
-    tibble(format = "markdown", caption = "Primeiras observações")
-print(etl.full)
+kable(etl.full[1:10,], format = "markdown", align = 'l')
 ```
 
 ___
@@ -133,7 +138,7 @@ ___
 Esta etapa corresponde a um pré-processamento para então iniciar a análise exploratória de dados.
 
 ___
-### Dados Faltantes
+### Dados Missing
 
 ```{r Verificando Missing Data, results="asis"}
 # Soma de valores missing por variável em Treino
@@ -1057,7 +1062,7 @@ pred <- predict( ajt.trn,
 previsoes <- data.frame(observado = mdl.vld$class,
                         previsto = pred %>% 
                                       round() %>% 
-                                      factor(labels = c("Sim", "Não")))
+                                      factor(labels = c("Positivo", "Negativo")))
 ```
 
 ```{r Tabela Cruzada - Validação}
@@ -1084,7 +1089,7 @@ Para avaliar o desempenho do modelo nos dados de validação, foi construída um
 ```{r Confusion Matrix usando Caret}
 cm <- confusionMatrix(previsoes$observado, 
                       previsoes$previsto, 
-                      positive = "Sim")
+                      positive = 'Positivo')
 ```
 
 Matriz de Confusão - Usando o pacote Caret
@@ -1146,7 +1151,7 @@ Normalmente, ao se testar uma hipótese, é definido o *nível de significância
 - Ao se diminuir a probabilidade de ocorrer um *Erro do Tipo I*, ou seja, diminuindo o valor de α, aumenta-se a probabilidade de se ocorrer um *Erro do Tipo II*. A probabilidade da ocorrência do Erro do tipo II é chamada de β.
 
 ```{r Mosaico Confusion Matrix}
-mosaicplot(cm$table, color = TRUE, shade = TRUE, main = "Mosaico para Confusion Matrix", )
+mosaicplot(cm$table, color = TRUE, shade = TRUE, main = "Mosaico para Confusion Matrix")
 ```
 
 A partir destas definições construímos as duas principais métricas, a ***Precisão*** e a ***Sensibilidade***.

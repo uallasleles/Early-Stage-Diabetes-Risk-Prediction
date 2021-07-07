@@ -138,7 +138,7 @@ ___
 Esta etapa corresponde a um pré-processamento para então iniciar a análise exploratória de dados.
 
 ___
-### Dados Faltantes
+### Dados Missing
 
 ```{r Verificando Missing Data, results="asis"}
 # Soma de valores missing por variável em Treino

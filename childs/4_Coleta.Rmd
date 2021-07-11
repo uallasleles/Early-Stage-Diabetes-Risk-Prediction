@@ -19,7 +19,7 @@ ___
 # TREINO: Pré-visualização das primeiras observações:
 etl.full %>% 
     head() %>% 
-    tibble(format = "markdown", caption = "Primeiras observações")
+    kable()
 ```
 
 ___
@@ -104,16 +104,8 @@ Esta etapa corresponde a um pré-processamento para então iniciar a análise ex
 ___
 ### Dados Faltantes
 
-```{r Verificando Missing Data, results="asis"}
-# Soma de valores missing por variável em Treino
-if(any(is.na(etl.full)))
-  {
-    subset(data.frame("SubTotal_NA" = apply(etl.full, 
-                                     2, 
-                                     function(x){
-                                       sum(is.na(x))
-                                       })), SubTotal_NA > 0)
-}
+```{r Verificando Missing Data}
+colSums(is.na(etl.full))
 ```
 
 ```{r Mapa de Valores Missing}
@@ -167,13 +159,12 @@ ___
 # Removendo variável 'PassengerId'
 etl.full$PassengerId <- NULL
 
-# Removendo variável 'PassengerId'
+# Removendo variável 'Name'
 etl.full$Name <- NULL
 
-# Removendo a variável 'flag'
+# Removendo a variável 'Cabin'
 etl.full$Cabin <- NULL
 
-# Removendo a variável 'flag'
 etl.full$idx <- NULL
 etl.trn$idx <- NULL
 etl.trn$idx <- NULL

@@ -28,48 +28,37 @@ Uma boa forma de iniciar uma análise descritiva adequada é verificar os tipos 
 ```{r Variáveis Disponíveis}
 # Qualitativas Nominais
 var.fct <- c()
-for(i in 1:ncol(aed.trn)){
-    if(is.factor(aed.trn[,i]) && !is.ordered(aed.trn[,i]))
-    {
-        var.fct = c(var.fct, names(aed.trn)[i])
-    }
-}
+for(i in 1:ncol(df)){
+  if(is.factor(df[,i]) && !is.ordered(df[,i])){
+    var.fct = c(var.fct, names(df)[i])}}
 
 # Qualitativas Ordinais
 var.fct_ord <- c()
-for(i in 1:ncol(aed.trn)){
-  i = 1
-    if(is.factor(aed.trn[,i]) && is.ordered(aed.trn[,i]))
-    {
-        var.fct_ord = c(var.fct_ord, names(aed.trn)[i])
-    }
-}
+for(i in 1:ncol(df)){
+  if(is.factor(df[,i]) && is.ordered(df[,i])){
+    var.fct_ord = c(var.fct_ord, names(df)[i])}}
 
 # Quantitativas Discretas
 var.num <- c()
-for(i in 1:ncol(aed.trn)){
-    if(is.integer(aed.trn[,i]))
-    {
-        var.num <- c(var.num, names(aed.trn)[i])
-    }
-}
+for(i in 1:ncol(df)){
+  if(is.integer(df[,i])){
+    var.num <- c(var.num, names(df)[i])}}
 
 # Quantitativas Contínuas
 var.num_con <- c()
-for(i in 1:ncol(aed.trn)){
-    if(typeof(aed.trn[,i]) == "double")
-    {
-        var.num_con <- c(var.num_con, names(aed.trn)[i])
-    }
-}
+for(i in 1:ncol(df)){
+  if(typeof(df[,i]) == "double"){
+    var.num_con <- c(var.num_con, names(df)[i])}}
 
-data.frame("Qualitativas_Nominais - " = var.fct)
+d1 = data.frame("Qualitativas_Nominais - " = var.fct)
+d2 = data.frame("Qualitativas_Ordinais - " = var.fct_ord)
+d3 = data.frame("Quantitativas_Discretas - " = var.num)
+d4 = data.frame("Quantitativas_Contínuas - " = var.num_con)
+var_type_list = list(d1, d2, d3, d4)
 
-data.frame("Qualitativas_Ordinais - " = var.fct_ord)
-
-data.frame("Quantitativas_Discretas - " = var.num)
-
-data.frame("Quantitativas_Contínuas - " = var.num_con)
+for(i in var_type_list){
+  if(dim(i)[1] != 0){
+    print(i)}}
 ```
 
 ___
@@ -142,19 +131,16 @@ for(i in c(var.fct, var.fct_ord)){
 ___
 #### Variáveis Quantitativas
 
-- Discretas
-
-- Contínuas
+  - Discretas
+  - Contínuas
 
   > Agrupam-se os valores das variáveis em classes e obtêm-se as frequências em cada classe.
 
 As distribuições podem ser representadas por meio de:
 
-- Gráfico de Dispersão Unidimensional (dotplot)
-
-- Gráfico Ramo e Folhas (Steam and Leaf)
-
-- Histograma
+  - Gráfico de Dispersão Unidimensional (dotplot)
+  - Gráfico Ramo e Folhas (Steam and Leaf)
+  - Histograma
 
 > (@) **Distribuição de Frequências: Variáveis Quantitativas**
 

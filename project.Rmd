@@ -19,6 +19,7 @@ output:
 encoding: "UTF-8"
 editor_options: 
   chunk_output_type: inline
+  
 ---
 
 ```{r setup, include=FALSE}
@@ -29,25 +30,32 @@ knitr::opts_chunk$set(  echo=TRUE )
 options(OutDec = ",")
 ```
 
+
 ```{r Configura_WD, eval=FALSE, include=FALSE}
 source(file = "scripts/set_wd.R")
 ```
 
-Diretório de Trabalho:
-```{r Consulta_WD, echo=FALSE}
-getwd()
-```
-
 # Dependências
 
+
+
 ## Pacotes
+
 ```{r Instalando Pacotes, eval=FALSE, include=FALSE}
 source(file = "scripts/packages_install.R")
 ```
 
+
+
+
+
+
+
 ```{r Carregando Pacotes, include=FALSE}
 source(file = "scripts/packages_require.R")
 ```
+
+
 
 ## Funções
 

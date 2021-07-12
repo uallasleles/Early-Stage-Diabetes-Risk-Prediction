@@ -1,13 +1,13 @@
 {
-    "path" : "~/GitHub/Early-Stage-Diabetes-Risk-Prediction",
+    "path" : "C:/workspace/rstudio/proj_20210626",
     "sortOrder" : [
-        {
-            "ascending" : false,
-            "columnIndex" : 1
-        },
         {
             "ascending" : true,
             "columnIndex" : 2
+        },
+        {
+            "ascending" : false,
+            "columnIndex" : 3
         }
     ]
 }

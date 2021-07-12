@@ -1,0 +1,2 @@
+"0","# Diagramas de Dispersão - Matriz de Correlação"
+"0","plot(df[,c(var.num, var.num_con)])"

@@ -1,0 +1,3 @@
+"0","df <- read.csv("
+"0","  file = 'data/diabetes.csv', "
+"0","  stringsAsFactors = TRUE)"

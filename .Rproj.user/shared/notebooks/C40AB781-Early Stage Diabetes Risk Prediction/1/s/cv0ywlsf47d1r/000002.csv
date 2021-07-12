@@ -1,0 +1,7 @@
+"0","par(mfrow=c(2,1))"
+"0","# Distribuição de Frequências: Variáveis Quantitativas"
+"0","for(i in var.num_con){"
+"0","        df_n <- fdt(df[,i])"
+"0","        #names(df)[[1]] = c(colnames(aed.trn[i]))"
+"0","        print(kable(df_n, caption = ""Title of the table""))"
+"0","}"

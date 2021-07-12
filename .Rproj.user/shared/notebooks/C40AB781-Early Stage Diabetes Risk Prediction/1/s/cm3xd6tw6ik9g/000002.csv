@@ -1,0 +1,6 @@
+"0","# Gráfico dos Coeficientes de Correlação"
+"0","# df[target_names] = df[target_names] %>% unlist() %>% as.numeric()"
+"0","# cor.plot(df[,c(var.num, target_names)])"
+"0","df[target_names] = df[target_names] %>% unlist() %>% as.numeric()"
+"0","df[feature_names] = df[feature_names] %>% unlist() %>% as.numeric()"
+"0","M = cor(df[,c(feature_names, target_names)])"

@@ -1,0 +1,8 @@
+"0","# Distribuição de Frequências para as Variáveis Qualitativas Nominais"
+"0","for(i in var.fct){"
+"0","  fdt_cat(df[,i]) %>% "
+"0","    tibble() -> df_var"
+"0","  "
+"0","  names(df_var)[1] = c(colnames(df[i]))"
+"0","  print(kable(df_var[order(df_var[2], decreasing = TRUE),]))"
+"0","}"

@@ -1,0 +1,4 @@
+"0","class1 <- predict(ajt.trn, newdata = mdl.vld, type = ""response"")"
+"0","class2 <- mdl.vld[target_names]"
+"0","pred <- prediction(class1, class2)"
+"0","perf <- performance(pred, ""tpr"", ""fpr"")"

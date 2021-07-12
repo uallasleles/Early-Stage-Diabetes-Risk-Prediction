@@ -1,0 +1,2 @@
+"0","# Read a txt file"
+"0","read.delim(DATADIC, sep='|')"

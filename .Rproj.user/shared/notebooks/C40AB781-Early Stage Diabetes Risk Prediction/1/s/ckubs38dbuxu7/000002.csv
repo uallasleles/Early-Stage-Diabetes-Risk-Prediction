@@ -1,0 +1,8 @@
+"0","# Boxplots valor conforme as Categóricas"
+"0","par(mfrow=c(1,3), cex = 0.65)"
+"0","for(i in var.fct){"
+"0","  boxplot(df[,var.num] ~ df[,i], "
+"0","          beside = TRUE, "
+"0","          xlab = names(df)[grep(i, names(df))],"
+"0","          ylab = names(df)[grep(var.num, names(df))])"
+"0","}"

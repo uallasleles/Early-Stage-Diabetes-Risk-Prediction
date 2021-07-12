@@ -1,0 +1,4 @@
+"0","Z_df <- dget(file = ""data/df.R"")"
+"0","# ------------------------------------------------------------------------------"
+"0","# Padroniza"
+"0","Z_df[c(var.num, var.num_con)] <- sapply(Z_df[c(var.num, var.num_con)], scale)"

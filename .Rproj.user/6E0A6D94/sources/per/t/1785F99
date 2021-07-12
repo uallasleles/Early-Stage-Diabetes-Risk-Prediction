@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1625970757305.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3788334677",
+    "id" : "1785F99",
+    "lastKnownWriteTime" : 1626094985,
+    "last_content_update" : 1626094985439,
+    "path" : "C:/workspace/rstudio/proj_20210626/Early Stage Diabetes Risk Prediction.Rmd",
+    "project_path" : "Early Stage Diabetes Risk Prediction.Rmd",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "docOutlineSize" : "237.0651618522088",
+        "docOutlineVisible" : "0",
+        "last_setup_crc32" : "",
+        "scrollLine" : "0",
+        "source_window_id" : "",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

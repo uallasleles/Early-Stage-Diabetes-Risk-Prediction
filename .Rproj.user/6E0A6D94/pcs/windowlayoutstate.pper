@@ -7,12 +7,8 @@
     },
     "right" : {
         "panelheight" : 686,
-<<<<<<< Updated upstream
-        "splitterpos" : 283,
-=======
         "splitterpos" : 319,
->>>>>>> Stashed changes
-        "topwindowstate" : "NORMAL",
+        "topwindowstate" : "MAXIMIZE",
         "windowheight" : 724
     }
 }

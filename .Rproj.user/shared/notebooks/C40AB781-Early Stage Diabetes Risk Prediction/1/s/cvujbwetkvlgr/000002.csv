@@ -1,0 +1,4 @@
+"0","# Gerar Modelos de Classificação"
+"0","ajt.trn <- glm(formula = class ~ .,"
+"0","               family = gaussian,"
+"0","               data = mdl.trn)"

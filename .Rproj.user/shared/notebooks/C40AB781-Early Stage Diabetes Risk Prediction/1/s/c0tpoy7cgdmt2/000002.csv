@@ -1,0 +1,2 @@
+"0","# Gerando uma curva ROC em R"
+"0","plot(perf, col = rainbow(10, alpha = NULL))"

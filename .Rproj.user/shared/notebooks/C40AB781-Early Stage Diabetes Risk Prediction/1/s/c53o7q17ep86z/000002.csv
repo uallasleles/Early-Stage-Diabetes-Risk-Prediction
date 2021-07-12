@@ -1,0 +1,3 @@
+"0","# Exporta os dados"
+"0","dput(training, file = ""data/training.R"")"
+"0","dput(testing,  file = ""data/testing.R"")"

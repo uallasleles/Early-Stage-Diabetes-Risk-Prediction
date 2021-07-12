@@ -1,0 +1,2 @@
+"0","target_names <- c('class')"
+"0","feature_names = names(df[!names(df) %in% target_names])"

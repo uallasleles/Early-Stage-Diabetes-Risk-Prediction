@@ -1,0 +1,1 @@
+"0","acuracia <- (cm$table[1,1] + cm$table[2,2])/(cm$table[1,1] + cm$table[1,2] + cm$table[2,1] + cm$table[2,2])"

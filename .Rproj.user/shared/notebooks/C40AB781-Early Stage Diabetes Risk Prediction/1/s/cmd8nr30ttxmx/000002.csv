@@ -1,0 +1,6 @@
+"0","metricas <- data.frame("
+"0","  ""Acuracia""      = acuracia, "
+"0","  ""Precisao""      = precisao, "
+"0","  ""Sensibilidade"" = sensibilidade, "
+"0","  ""F1-Score""      = f1)"
+"0","metricas"

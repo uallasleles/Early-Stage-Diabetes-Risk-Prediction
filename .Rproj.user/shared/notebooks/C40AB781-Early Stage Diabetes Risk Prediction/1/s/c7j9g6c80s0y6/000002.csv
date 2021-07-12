@@ -1,0 +1,2 @@
+"0","# Diagramas de Dispersão + Coeficientes de Correlação"
+"0","pairs.panels(df[,c(var.num, target_names)])"

@@ -1,0 +1,5 @@
+"0","predict(ajt.trn, "
+"0","        newdata = mdl.tst, "
+"0","        type = ""response"") %>% "
+"0","  round() %>% "
+"0","  factor(labels = c(""Negative"", ""Positive"")) -> predicao"

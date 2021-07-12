@@ -10,9 +10,9 @@ output      : github_document
 ---
 ___
 <br>
-**Prevendo o risco de diabetes no estágio inicial:**<br>
+***Prevendo o risco de diabetes no estágio inicial:*** <br>
 
-> Este projeto usa técnicas de mineração de dados e de machine learning para obter uma probabilidade que indique se uma pessoa tem determinada doença.
+> *Este projeto usa técnicas de mineração de dados e de machine learning para obter uma probabilidade que indique se uma pessoa tem determinada doença.*
 
 <br>
 
@@ -22,9 +22,6 @@ Dado o conjunto de parâmetros, podemos prever uma pessoa com diabetes em estág
 ***Fonte dos dados:** <br>
 Estes dados foram coletados por meio de questionários diretos de pacientes do Hospital de Diabetes Sylhet em Sylhet, Bangladesh, e aprovado por um médico.<br>
 Link: [UCI: Early stage diabetes risk prediction dataset.](https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.)*
-
-___
-
 
 ```{r eval=FALSE, include=FALSE}
 # Configura o local deste arquivo como o diretório de trabalho
@@ -37,7 +34,8 @@ setwd(
 # Verifica o diretório de trabalho
 getwd()
 ```
-
+___
+<br>
 
 #### Importando os Pacotes
 
@@ -375,11 +373,11 @@ grid.arrange(g1, g2, g3, nrow = 3)
 grid.arrange(g2, arrangeGrob(g3, g4, ncol=2), nrow = 1)
 grid.arrange(g2, arrangeGrob(g3, g4, nrow=2), nrow = 1)
 ```
+
 ### Medidas de Dispersão
 
 As medidas de dispersão são a amplitude total, a variância, o desvio-padrão e o coeficiente de variação.
 
-___
 > **Amplitude Total**
 
 É a diferença entre o maior e menor dos valores da série.
@@ -764,7 +762,6 @@ massa <- training
 mdl.tst <- testing
 ```
 
-___
 ## Amostragem
 
 > **Dividir os dados em Treinamento, Validação e Teste.**
@@ -807,9 +804,8 @@ mdl.trn <- mdl.trn[ , -col_idx]
 mdl.vld <- mdl.vld[ , -col_idx]
 ```
 
-___
 ## Treino
-___
+
 > Treinando um ***Modelo Linear Generalizado*** para classificação.
 
 ```{r Ajuste G.L.M.}
@@ -824,9 +820,9 @@ ajt.trn <- glm(formula = class ~ .,
 ```{r Output G.L.M}
 summary(ajt.trn)
 ```
-___	
+
 ## Validação
-___
+
 > Validando o modelo através de predições utilizando o *Conjunto de Validação*.
 
 ```{r Predição para Validação}
@@ -857,7 +853,6 @@ chisq.test(previsoes$observado, previsoes$previsto)
 hist(pred, xlab = "Predições", main = "Histograma de Predições")
 ```
 
-___
 ### Avaliação
 
 Para avaliar o desempenho do modelo nos dados de validação, foi construída uma *matriz de confusão*.
@@ -872,13 +867,11 @@ Matriz de Confusão - Usando o pacote Caret
 print(cm)
 ```
 
-___
 ***Accuracy***
 
 Através da *Matriz de Confusão* obtivemos a ***Acurácia de `r round((cm$table[1,1] + cm$table[2,2]) / (cm$table[1,1] + cm$table[1,2] + cm$table[2,1] + cm$table[2,2]) * 100, 2)`%***, ela corresponde a fração das premissas corretas em relação ao total de observações. Esta métrica também poderia ser calculada utilizando a função *table()* ou a função *CrossTable()*, pois ela corresponde a soma das predições corretas dividida pelo total de observações.  
 Porém, não é suficiente (e nem segura) para avaliarmos a eficiência do modelo. Analisamos então, outras métricas obtidas pela Confusion Matrix, que nos informe não apenas o percentual de acertos, mas também a precisão e a sensibilidade.
 
-___
 ***95% CI***
 
 O ***Intervalo de Confiança***, denotado por *95% CI*, é ***[`r round(cm$overall["AccuracyLower"], 4)`, `r round(cm$overall["AccuracyUpper"], 4)`]***. Ele é uma *estimativa por intervalo* de um *parâmetro populacional*, que com dada frequência (*Nível de Confiança*), inclui o parâmetro de interesse. Nesse caso específico, significa dizer que 95% dos *intervalos de confiança* observados têm o valor real do parâmetro.
@@ -893,10 +886,8 @@ O ***Teste de Concordância Kappa*** foi igual a ***`r round(cm$overall["Kappa"]
 
 O seu valor pode ser interpretado por meio de uma tabela.
 
-___
 ***Mcnemar's Test P-Value***
 
-___
 ***Sensitivity***
 
 ***Specificity***
@@ -917,7 +908,6 @@ ___
 fourfoldplot(cm$table)
 ```
 
-___
 O pacote Caret nos dá, já calculadas, as principais métricas estatísticas, baseadas nos tipos de acertos e, nos tipos de erros. Para a *Acurácia*, não havia diferenças, apenas acertos e erros.
 
 Agora, os erros são classificados como ***"Erro do Tipo I"*** e ***"Erro do Tipo II"***. O primeiro é *baseado nos* ***Falsos Positivos (FP)***, o segundo é *baseado nos* ***Falsos Negativos (FN)***.
@@ -951,7 +941,6 @@ A ***F1-Score*** é uma alternativa para não utilizarmos a Precisão e a Sensib
 
 Outra forma é a ***F-Beta*** onde podemos escolher o Peso entre Precisão e Sensibilidade através do parâmetro Beta.
 
-___
 #### Métricas de Avaliação
 
 Avaliar um modelo de Classificação Binária:
@@ -1000,13 +989,11 @@ perf <- performance(pred, "tpr", "fpr")
 plot(perf, col = rainbow(10, alpha = NULL))
 ```
 
-___
 Realizando o ***Teste Chi-Quadrado*** (X²).
 ```{r Chi-Quadrado - Validação}
 chisq.test(previsoes$observado, previsoes$previsto)
 ```
 
-___
 ## Teste
 
 Predição de teste utilizando novos dados.
